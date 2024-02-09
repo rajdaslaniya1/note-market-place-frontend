@@ -1,0 +1,200 @@
+/* ==================================================================
+                Login,Forgot,Signup,Change
+=====================================================================*/
+/*-----------------Form Set In Center-----------------*/
+#login,
+#forgotpassword,
+#signup,
+#changepassword {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100%;
+  width: 100%;
+  /* background: url(../../assets/images/pre-login/banner-with-overlay.jpg)
+    no-repeat; */
+  background-size: cover;
+  background-position: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.form-group input:hover,
+.form-group input:focus {
+  border-color: #6255a5;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.form-group select:hover,
+.form-group select:focus {
+  border-color: #6255a5;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/*-----------------Form Heading-----------------*/
+.form-heading {
+  font-family: "Open Sans", sans-serif;
+  font-size: 34px;
+  font-weight: Semibold(600);
+  line-height: 38px;
+  color: #6255a5;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-sub-heading {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: Regular(400);
+  line-height: 19px;
+  color: #333333;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.form-last-heading {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: Regular(400);
+  line-height: 19px;
+  color: #333333;
+  text-align: center;
+  margin-top: 20px;
+}
+.form-third-heading {
+  font-size: 16px;
+  color: greenyellow;
+  text-align: center;
+}
+/*-----------------Form Label---------------*/
+label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: Regular(400);
+  line-height: 20px;
+  color: #333333;
+}
+/*-----------------Form Image---------------*/
+.img1 {
+  margin-bottom: 10px;
+}
+/*-----------------Form Box ,Field Icon---------------*/
+.form-box {
+  width: 480px;
+  background: #fff;
+  padding: 40px 40px 40px 40px;
+  border-radius: 5px;
+}
+
+.field-icon {
+  float: right;
+  margin-right: 18px;
+  margin-top: -34px;
+  position: relative;
+  z-index: 2;
+}
+
+.form-box #password {
+  margin-top: 30px;
+}
+/*-----------------Invalid Text---------------*/
+.invalid-text {
+  margin-top: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  font-weight: Light(300);
+  line-height: 20px;
+  color: #ff3636;
+}
+/*-----------------Form Button---------------*/
+#signup button,
+#changepassword button,
+#forgotpassword button,
+#login button,
+#emailvalidation button {
+  color: #fff;
+  width: 100%;
+  height: 30px;
+  border-radius: 3px;
+  background-color: #6255a5;
+  font-style: "Open sans", sans-serif;
+  font-size: 18px;
+  line-height: 2px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#forgotpassword button:hover,
+#forgotpassword button:focus,
+#signup button:hover,
+#signup button:focus,
+#login button:hover,
+#login button:focus,
+#changepassword button:hover,
+#changepassword button:focus,
+#emailvalidation button:hover,
+#emailvalidation button:focus {
+  color: #6555a5;
+  border: 1px solid #6555a5;
+  background-color: #fff;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+/* =========================================
+                Login
+============================================ */
+
+#login .form-box #email #emailtext {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: Regular(400);
+  line-height: 20px;
+  color: #000;
+  border: 1px solid #6255a5;
+  width: 100%;
+  height: 50px;
+}
+
+#login .form-box #password #password-field {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: Regular(400);
+  line-height: 20px;
+  color: #8a8a8a;
+  border-radius: 3px;
+  border: 1px solid #ff5e5e;
+  width: 100%;
+  height: 50px;
+}
+
+#login #forgot {
+  float: right;
+}
+
+#login #exampleCheck1 {
+  border: 1px solid #d1d1d1;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+}
+
+#login #checkbox label {
+  margin-top: 8px;
+  margin-left: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: Regular(400);
+  line-height: 20px;
+  color: #333333;
+}
+
+#login p a {
+  color: #6255a5;
+}
