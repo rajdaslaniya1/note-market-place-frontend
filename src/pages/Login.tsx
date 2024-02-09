@@ -1,74 +1,108 @@
 import React from "react";
 
+import LoginLayout from "component/layout/LoginLayout";
+import InputComponent from "component/InputComponent";
+import PasswordInputComponent from "component/PasswordInputComponent";
+
+import * as Yup from "yup";
+import { Formik } from "formik";
+import { toast } from "react-toastify";
+import { loginApiCall } from "service/login-services";
+
+const validationSchema = Yup.object({
+  email: Yup.string().required("Email is required").email("Email is not valid"),
+  password: Yup.string()
+    .matches(
+      /^(?=.*[a-z])(?=.*[!@#$%^&*()_+{}[\]|;:,.<>?])(?=.*\d)(?!\s).{6,24}$/,
+      "Password must contain at least one lowercase letter, one number, and one special character"
+    )
+    .required("Password is required"),
+  isRemember: Yup.boolean(),
+});
+
 const Login = () => {
+  const submitLoginData = async (values: {
+    email: string;
+    password: string;
+    isRemember: boolean;
+  }) => {
+    const data = await loginApiCall({
+      email: values.email,
+      password: values.password,
+    });
+    console.log(data);
+    if (data.success) {
+      toast.success("User login successfully");
+    }
+  };
+
   return (
-    <section id="login">
-      <div id="group">
-        <div className="text-center img-responsive img1">
-          {/* <img src="images/Logo/white-logo.png" /> */}
-        </div>
-        <div className="form-box">
-          <form>
-            <h2 className="form-heading">Login</h2>
-            <p className="form-sub-heading">
+    <LoginLayout>
+      <Formik
+        initialValues={{ email: "", password: "", isRemember: false }}
+        validationSchema={validationSchema}
+        onSubmit={(values) => {
+          // Handle form submission
+          submitLoginData(values);
+        }}
+      >
+        {({ values, errors, handleSubmit, handleChange }) => (
+          <form onSubmit={handleSubmit}>
+            <h2 className="form-layout-heading">Login</h2>
+            <p className="form-layout-sub-heading">
               Enter email address and password for login
             </p>
-            <div className="form-group" id="email">
-              <label className="control-label">Email</label>
-              <div>
-                <input
-                  type="email"
-                  className="form-control"
-                  name="email"
-                  id="emailtext"
-                  placeholder="Enter email address"
-                  required
-                />
-              </div>
+            <div className="mb-3">
+              <InputComponent
+                label="Email"
+                name="email"
+                id="EmailId"
+                placeHolder="Enter email address"
+                type="email"
+                onChange={handleChange}
+                errors={errors.email}
+                value={values.email}
+                required
+              />
             </div>
-            <div className="form-group" id="password">
-              <label className="control-label">Password</label>
-              <label id="forgot">
-                <a href="forgot.html">Forgot Password?</a>
-              </label>
-              <div>
-                <input
-                  id="password-field"
-                  type="password"
-                  className="form-control"
-                  name="password"
-                  placeholder="Enter your password"
-                  required
-                />
-                <span className="field-icon toggle-password" id="icon">
-                  {/* <img src="images/icon/eye.png" /> */}
-                </span>
-              </div>
+            <div className="mb-3">
+              <PasswordInputComponent
+                label="Password"
+                name="password"
+                id="password"
+                placeHolder="Enter your password"
+                onChange={handleChange}
+                errors={errors.password}
+                value={values.password}
+                required
+                isLoginPage
+              />
             </div>
-            <div className="invalid-text">
-              The password that you've entered is incorrect
-            </div>
+
             <div className="form-group form-check" id="checkbox">
               <input
                 type="checkbox"
                 className="form-check-input"
                 id="exampleCheck1"
+                name="isRemember"
+                checked={values.isRemember}
+                onChange={handleChange}
               />
               <label className="form-check-label" htmlFor="exampleCheck1">
                 Remember Me
               </label>
             </div>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary1 btn-full-width">
               Login
             </button>
             <br />
-            <p className="form-last-heading">
+            <p className="form-layout-last-heading">
               Don't have an account?<a href="signup.html">Sign Up</a>
             </p>
           </form>
-        </div>
-      </div>
-    </section>
+        )}
+      </Formik>
+    </LoginLayout>
   );
 };
 

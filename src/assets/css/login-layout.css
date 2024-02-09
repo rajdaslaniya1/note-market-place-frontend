@@ -1,0 +1,27 @@
+#login-layout {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100%;
+  width: 100%;
+  background: url(../images/login-background-image.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+.main-image {
+  margin-bottom: 10px;
+}
+.login-layout-form-box {
+  width: 480px;
+  background: var(--white-color);
+  padding: 40px 40px 40px 40px;
+  border-radius: 5px;
+}

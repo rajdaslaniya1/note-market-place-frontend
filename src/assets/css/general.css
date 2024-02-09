@@ -1,164 +1,57 @@
-.main-heading {
-  font-family: "Open Sans", sans-serif;
-  font-size: 34px;
-  font-weight: Semibold(600);
-  line-height: 38px;
-  color: #6255a5;
-  margin-bottom: 20px;
+:root {
+  --main-color: #6255a5;
+  --white-color: #fff;
+  --light-black-color: #333333;
+  --greenyellow-color: greenyellow;
+  --black-color: #000;
+  --light-d1-color: #d1d1d1;
 }
 
-.blank {
-  height: 90px;
+html,
+body,
+#root {
+  height: 100%;
   width: 100%;
 }
 
-#bg-heading {
-  /* background-image: url("../images/User-Profile/banner-with-overlay.jpg"); */
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
+.invalid-text {
+  margin-top: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 20px;
+  color: #ff3636;
+}
+
+.btn {
+  padding: 5px 10px;
   display: flex;
-  min-height: 250px;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  padding: 30px;
-}
-
-#up-heading {
-  font-family: "Open Sans", sans-serif;
-  font-size: 48px;
-  font-weight: Semibold(600);
-  line-height: 52px;
-  color: #ffffff;
-}
-
-.form-group input {
-  border: 1px solid #d1d1d1;
   border-radius: 3px;
-}
-
-.form-group input:hover,
-.form-group input:focus {
-  border-color: #6255a5;
-}
-
-.form-group select:hover,
-.form-group select:focus {
-  border-color: #6255a5;
-}
-
-a.btn-color {
-  height: 40px;
-  background: #6255a5;
-  border: 1px solid #6255a5;
-  color: #fff;
-}
-
-a.btn {
-  border-radius: 3px;
+  font-style: "Open sans", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
   text-transform: uppercase;
-  font-size: 18px;
-  line-height: 26px;
-  font-weight: 600;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-a.btn:hover {
-  border: 1px solid #6255a5;
-  background-color: #fff;
-  color: #6255a5;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+.btn-full-width {
+  width: 100%;
 }
 
-/*===============Heading===================*/
-.heading {
-  font-family: "Open Sans", sans-serif;
-  font-size: 34px;
-  font-weight: Semibold(600);
-  line-height: 38px;
-  color: #6255a5;
-  margin-bottom: 40px;
-}
-.sub-heading {
-  font-family: "Open Sans", sans-serif;
-  font-size: 24px;
-  font-weight: Semibold(600);
-  line-height: 28px;
-  color: #6255a5;
-  margin-bottom: 20px;
-}
-.sub-heading-1 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 24px;
-  font-weight: Semibold(600);
-  line-height: 28px;
-  color: #6255a5;
-}
-.sub-heading-2 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 18px;
-  font-weight: Regular(400);
-  line-height: 26px;
-  color: #333333;
-  margin-bottom: 30px;
-}
-/*--------------- Drop Down --------------*/
-div.dropdown-menu.show {
-  -webkit-transform: translate3d(620px, -3px, 0px) !important;
-  transform: translate3d(620px, -3px, 0px) !important;
-}
-.dropdown-menu .dropdown-item {
-  color: #6255a5;
+.btn-primary1 {
+  color: var(--white-color) !important;
+  background-color: var(--main-color) !important;
 }
 
-.dropdown-menu .dropdown-item:hover,
-.dropdown-menu .dropdown-item:focus {
-  color: #000;
-}
-.dropleft .dropdown-menu {
-  border: none;
-  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
-}
-.dropleft .dropdown-item {
-  font-size: 15px;
-  line-height: 18px;
-  font-weight: 400;
-}
-.dropleft .dropdown-item:hover,
-.dropleft .dropdown-item:focus,
-.dropleft .dropdown-item:active {
-  color: #fff;
-  text-decoration: none;
-  outline: 0px;
-  background-color: #6255a5;
-}
-
-.dropleft div.dropdown-menu {
-  padding: 0;
-}
-
-/* =========================================
-                  Content Boxes
-  ============================================ */
-
-.content-box-lg {
-  padding: 150px;
-}
-
-.content-box-md {
-  padding: 60px 0;
-}
-
-.content-box-sm {
-  padding: 0px 0px 60px 0;
+.btn-primary1:hover,
+.btn-primary1:focus {
+  color: var(--main-color) !important;
+  border: 1px solid var(--main-color) !important;
+  background-color: var(--white-color) !important;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }

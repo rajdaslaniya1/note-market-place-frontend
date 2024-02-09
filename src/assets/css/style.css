@@ -36,39 +36,7 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-/*-----------------Form Heading-----------------*/
-.form-heading {
-  font-family: "Open Sans", sans-serif;
-  font-size: 34px;
-  font-weight: Semibold(600);
-  line-height: 38px;
-  color: #6255a5;
-  text-align: center;
-  margin-bottom: 20px;
-}
-.form-sub-heading {
-  font-family: "Open Sans", sans-serif;
-  font-size: 18px;
-  font-weight: Regular(400);
-  line-height: 19px;
-  color: #333333;
-  margin-bottom: 40px;
-  text-align: center;
-}
-.form-last-heading {
-  font-family: "Open Sans", sans-serif;
-  font-size: 18px;
-  font-weight: Regular(400);
-  line-height: 19px;
-  color: #333333;
-  text-align: center;
-  margin-top: 20px;
-}
-.form-third-heading {
-  font-size: 16px;
-  color: greenyellow;
-  text-align: center;
-}
+
 /*-----------------Form Label---------------*/
 label {
   font-family: "Open Sans", sans-serif;
