@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import LoginLayout from "component/layout/LoginLayout";
 import InputComponent from "component/InputComponent";
@@ -8,6 +8,9 @@ import * as Yup from "yup";
 import { Formik } from "formik";
 import { toast } from "react-toastify";
 import { loginApiCall } from "service/login-services";
+import { useDispatch } from "react-redux";
+import { saveUserDetails } from "store/action/userAuth.action";
+import Loader from "component/Loader";
 
 const validationSchema = Yup.object({
   email: Yup.string().required("Email is required").email("Email is not valid"),
@@ -21,6 +24,8 @@ const validationSchema = Yup.object({
 });
 
 const Login = () => {
+  const dispatch = useDispatch();
+
   const submitLoginData = async (values: {
     email: string;
     password: string;
@@ -30,14 +35,24 @@ const Login = () => {
       email: values.email,
       password: values.password,
     });
-    console.log(data);
     if (data.success) {
       toast.success("User login successfully");
+      dispatch(
+        saveUserDetails({
+          email: values.email,
+          password: values.password,
+          token: data.token,
+          isRemember: values.isRemember,
+        })
+      );
+    } else {
+      toast.error(data.message);
     }
   };
 
   return (
     <LoginLayout>
+      {/* <Loader /> */}
       <Formik
         initialValues={{ email: "", password: "", isRemember: false }}
         validationSchema={validationSchema}
