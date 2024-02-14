@@ -11,18 +11,72 @@ const Header = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === "/")
+    if (location.pathname === "/") {
       window.addEventListener("scroll", () => {
         if (typeof $(window) !== "undefined") {
           const scrollTop = $(window).scrollTop();
           if (scrollTop !== undefined && scrollTop > 50) {
-            setIsUsedWhiteNavBar(true);
+            $("nav").addClass("white-navbar");
+            //  Hide White Logo
+            $(".navbar-brand img").attr("src", mainDarkLogo);
+            //  Hide white Mobile Nav Open Button
+            $(".mobile-nav-open-btn").css("color", "#6255a5");
           } else {
-            setIsUsedWhiteNavBar(false);
+            $("nav").removeClass("white-navbar");
+            //  Show White Logo
+            $(".navbar-brand img").attr("src", mainWhiteLogo);
+            //  Show White Mobile Nav Open Button
+            $(".mobile-nav-open-btn").css("color", "#fff");
           }
         }
       });
-    else setIsUsedWhiteNavBar(true);
+      $("nav .navbar-toggler").click(function () {
+        if (typeof $(window) !== "undefined") {
+          const scrollTop = $(window).scrollTop();
+          if (scrollTop !== undefined && scrollTop > 50) {
+            $("body").toggleClass("mobile-menu-opened");
+            $("nav.navbar").toggleClass("navbar-fixed-height");
+            $("nav.navbar").toggleClass("navbar-scroll-content");
+            $("nav.navbar").addClass("white-navbar");
+          } else {
+            $("body").toggleClass("mobile-menu-opened");
+            $("nav.navbar").toggleClass("navbar-fixed-height");
+            $("nav.navbar").toggleClass("navbar-scroll-content");
+            $("nav.navbar").toggleClass("white-navbar");
+
+            if ($("nav.navbar").hasClass("white-navbar")) {
+              $(".navbar-brand img").attr("src", mainDarkLogo);
+            } else {
+              $(".navbar-brand img").attr("src", mainWhiteLogo);
+            }
+          }
+        }
+      });
+    } else {
+      $("nav").addClass("white-navbar");
+      //  Hide White Logo
+      $(".navbar-brand img").attr("src", mainDarkLogo);
+      //  Hide white Mobile Nav Open Button
+      $(".mobile-nav-open-btn").css("color", "#6255a5");
+
+      $("nav .navbar-toggler").click(function () {
+        $("body").toggleClass("mobile-menu-opened");
+        $("nav.navbar").toggleClass("navbar-scroll-content");
+        $("nav.navbar").toggleClass("navbar-fixed-height");
+        $("nav.navbar").addClass("white-navbar");
+      });
+    }
+
+    $("#mobile-nav-open-btn").click(function () {
+      $("#mobile-nav-open-btn").css("display", "none");
+      $("#mobile-nav-close-btn").css("display", "block");
+    });
+
+    //Hide Mobile Navbar
+    $("#mobile-nav-close-btn").click(function () {
+      $("#mobile-nav-open-btn").css("display", "block");
+      $("#mobile-nav-close-btn").css("display", "none");
+    });
 
     return () => {
       if (location.pathname === "/")
@@ -32,19 +86,12 @@ const Header = () => {
 
   return (
     <header>
-      <nav
-        className={`navbar navbar-expand-lg navbar-fixed-height fixed-top  ${
-          isUsedWhiteNavBar ? "white-navbar" : ""
-        }`}
-      >
+      <nav className={`navbar navbar-expand-lg navbar-fixed-height fixed-top`}>
         <div className="container">
           <div className="row">
             <div className="navbar-header">
               <Link className="navbar-brand text-left" to="/">
-                <img
-                  src={isUsedWhiteNavBar ? mainDarkLogo : mainWhiteLogo}
-                  alt="logo"
-                />
+                <img src={mainWhiteLogo} alt="logo" />
               </Link>
             </div>
 
@@ -96,11 +143,9 @@ const Header = () => {
                 width="40"
                 height="40"
                 viewBox="0,0,256,256"
-                style={{ fill: "#000000" }}
                 id="mobile-nav-open-btn"
               >
                 <g
-                  fill={`${isUsedWhiteNavBar ? "var(--main-color)" : "#fff"}`}
                   fill-rule="nonzero"
                   stroke="none"
                   stroke-width="1"

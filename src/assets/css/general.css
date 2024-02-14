@@ -207,6 +207,9 @@ body,
   overflow: hidden;
 }
 
-#mobile-nav-close-btn {
-  display: none;
+.white-navbar #mobile-nav-open-btn {
+  fill: var(--main-color);
+}
+#mobile-nav-open-btn {
+  fill: var(--white-color);
 }

@@ -139,7 +139,6 @@ ul.navbar-nav > li:last-child:hover a {
   flex: 0 0;
   color: var(--white-color);
   font-size: 40px;
-  display: none;
 }
 
 .navbar-toggler:focus {
@@ -152,4 +151,8 @@ ul.navbar-nav > li:last-child:hover a {
   height: 100vh;
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
+}
+
+#mobile-nav-close-btn {
+  display: none;
 }
