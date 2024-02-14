@@ -6,3 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import "assets/css/login.css";
 import "assets/css/login-layout.css";
+import "bootstrap/dist/js/bootstrap";
+import "assets/css/home.css";
+import "assets/css/header.css";
+import "assets/css/responsive.css";

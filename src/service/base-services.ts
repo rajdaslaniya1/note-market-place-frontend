@@ -9,11 +9,25 @@ const axiosInstance = axios.create({
   },
 });
 
+axiosInstance.interceptors.request.use(
+  (config) => {
+    // Show loader when request starts
+    // Here, you can use a callback function or event to update the loader state
+    console.log("Request started");
+    return config;
+  },
+  (error) => {
+    // Handle request errors
+    console.error("Request error:", error);
+    return Promise.reject(error);
+  }
+);
+
 export const apiService = async <T>(config: AxiosRequestConfig): Promise<T> => {
   try {
     const response: AxiosResponse<T> = await axiosInstance.request<T>(config);
     return response.data;
   } catch (error) {
-    throw error;
+    return Promise.reject(error);
   }
 };

@@ -1,3 +1,9 @@
 export const mainWhiteLogo = require("assets/images/main-white-logo.png");
 export const mainDarkLogo = require("assets/images/main-dark-logo.png");
 export const eyeImage = require("assets/images/eye.png");
+export const customer1 = require("assets/images/customer-1.png");
+export const customer2 = require("assets/images/customer-2.png");
+export const customer3 = require("assets/images/customer-3.png");
+export const customer4 = require("assets/images/customer-4.png");
+export const downloadImage = require("assets/images/download.png");
+export const sellerImage = require("assets/images/seller.png");
