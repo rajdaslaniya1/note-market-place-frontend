@@ -358,10 +358,6 @@
     width: 30px;
     height: 30px;
   }
-
-  ul.social-list i {
-    margin-top: 30%;
-  }
 }
 
 /*===================================================
@@ -771,10 +767,6 @@
   ul.social-list li a {
     width: 28px;
     height: 28px;
-  }
-
-  ul.social-list i {
-    margin-top: 30%;
   }
 }
 
@@ -1227,9 +1219,5 @@
   ul.social-list li a {
     width: 24px;
     height: 24px;
-  }
-
-  ul.social-list i {
-    margin-top: 20%;
   }
 }

@@ -6,6 +6,7 @@ import {
   downloadImage,
   sellerImage,
 } from "assets/images";
+import Footer from "component/Footer";
 import Header from "component/Header";
 import React from "react";
 
@@ -243,6 +244,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

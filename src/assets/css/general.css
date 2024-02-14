@@ -13,7 +13,10 @@ body,
   height: 100%;
   width: 100%;
 }
-
+.blank {
+  height: 90px;
+  width: 100%;
+}
 .invalid-text {
   margin-top: 10px;
   font-family: "Open Sans", sans-serif;
@@ -212,4 +215,42 @@ body,
 }
 #mobile-nav-open-btn {
   fill: var(--white-color);
+}
+
+#bg-heading {
+  background-image: url("../images/banner-with-overlay.jpg");
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 250px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+#up-heading {
+  font-family: "Open Sans", sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 52px;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+#header-footer-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#header-footer-layout .content {
+  flex: 1 1 auto;
 }

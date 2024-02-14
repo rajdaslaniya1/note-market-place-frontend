@@ -29,6 +29,9 @@
   width: max-content;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 ul.navbar-nav li a {
@@ -36,6 +39,7 @@ ul.navbar-nav li a {
   line-height: 20px;
   font-weight: 600;
   color: #fff;
+  text-decoration: none;
 }
 
 ul.navbar-nav > li:last-child {
@@ -138,7 +142,6 @@ ul.navbar-nav > li:last-child:hover a {
 .navbar-toggler {
   flex: 0 0;
   color: var(--white-color);
-  font-size: 40px;
 }
 
 .navbar-toggler:focus {

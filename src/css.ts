@@ -10,3 +10,6 @@ import "bootstrap/dist/js/bootstrap";
 import "assets/css/home.css";
 import "assets/css/header.css";
 import "assets/css/responsive.css";
+import "assets/css/footer.css";
+import "assets/css/search-notes.css";
+import "assets/css/faq.css";

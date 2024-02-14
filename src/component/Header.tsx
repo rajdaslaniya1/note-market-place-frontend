@@ -1,13 +1,9 @@
 import { mainDarkLogo, mainWhiteLogo } from "assets/images";
-import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import $ from "jquery";
 
 const Header = () => {
-  const [isUsedWhiteNavBar, setIsUsedWhiteNavBar] = useState(false);
-
-  const [showCloseIcon, setShowCloseIcon] = useState(false);
-
   const location = useLocation();
 
   useEffect(() => {
@@ -90,9 +86,9 @@ const Header = () => {
         <div className="container">
           <div className="row">
             <div className="navbar-header">
-              <Link className="navbar-brand text-left" to="/">
+              <NavLink className="navbar-brand text-left" to="/">
                 <img src={mainWhiteLogo} alt="logo" />
-              </Link>
+              </NavLink>
             </div>
 
             <button
@@ -116,18 +112,18 @@ const Header = () => {
               >
                 <g
                   fill="var(--main-color)"
-                  fill-rule="nonzero"
+                  fillRule="nonzero"
                   stroke="none"
-                  stroke-width="1"
-                  stroke-linecap="butt"
-                  stroke-linejoin="miter"
-                  stroke-miterlimit="10"
-                  stroke-dasharray=""
-                  stroke-dashoffset="0"
-                  font-family="none"
-                  font-weight="none"
-                  font-size="none"
-                  text-anchor="none"
+                  strokeWidth="1"
+                  strokeLinecap="butt"
+                  strokeLinejoin="miter"
+                  strokeMiterlimit="10"
+                  strokeDasharray=""
+                  strokeDashoffset="0"
+                  fontFamily="none"
+                  fontWeight="none"
+                  fontSize="none"
+                  textAnchor="none"
                   style={{ mixBlendMode: "normal" }}
                 >
                   <g transform="scale(5.12,5.12)">
@@ -146,18 +142,18 @@ const Header = () => {
                 id="mobile-nav-open-btn"
               >
                 <g
-                  fill-rule="nonzero"
+                  fillRule="nonzero"
                   stroke="none"
-                  stroke-width="1"
-                  stroke-linecap="butt"
-                  stroke-linejoin="miter"
-                  stroke-miterlimit="10"
-                  stroke-dasharray=""
-                  stroke-dashoffset="0"
-                  font-family="none"
-                  font-weight="none"
-                  font-size="none"
-                  text-anchor="none"
+                  strokeWidth="1"
+                  strokeLinecap="butt"
+                  strokeLinejoin="miter"
+                  strokeMiterlimit="10"
+                  strokeDasharray=""
+                  strokeDashoffset="0"
+                  fontFamily="none"
+                  fontWeight="none"
+                  fontSize="none"
+                  textAnchor="none"
                   style={{ mixBlendMode: "normal" }}
                 >
                   <g transform="scale(5.12,5.12)">
@@ -172,29 +168,29 @@ const Header = () => {
             >
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" to="search notes.html">
+                  <NavLink className="nav-NavLink" to="/search-notes">
                     Search Notes
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="login.html">
+                  <NavLink className="nav-NavLink" to="login.html">
                     Sell Your Notes
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="FAQ.html">
+                  <NavLink className="nav-NavLink" to="/faq">
                     FAQ
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="contact us.html">
+                  <NavLink className="nav-NavLink" to="contact us.html">
                     Contact Us
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/login">
+                  <NavLink className="nav-NavLink" to="/login">
                     Login
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </div>
